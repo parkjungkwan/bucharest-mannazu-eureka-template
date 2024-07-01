@@ -1,0 +1,29 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    web-application-type: reactive
+  application:
+    name: chat-service
+  data:
+    mongodb:
+      uri: mongodb://root:rootpass@127.0.0.1:27017/mgdb?retryWrites=true&w=majority&authSource=admin
+  sql:
+    init:
+      mode: always
+      encoding: UTF-8
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        type: trace
+jwt:
+    iss: langscool.com
+    secret: KimsionKimhojuKimhohyunPark
+    expiration:
+        access: 600000
+        refresh: 1200000
+
+
+server:
+  port: 8003

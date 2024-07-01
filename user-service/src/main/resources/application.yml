@@ -1,0 +1,42 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mydb
+    username: root
+    password: rootpass
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      platform: mysql
+      mode: always
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        jdbc:
+          lob:
+            '[non_contextual_creation]': true
+        '[format_sql]': true
+    show-sql: true
+    defer-datasource-initialization: true
+    open-in-view: false
+
+jwt:
+  iss: langscool.com
+  secret: KimsionKimhojuKimhohyunParkjuhaYangdonggyu
+  expiration:
+    access: 600000
+    refresh: 1200000
+
+
+eureka:
+  client:
+    register-with-eureka: true 
+    fetch-registry: true 
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka

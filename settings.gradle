@@ -1,0 +1,8 @@
+rootProject.name = 'root'
+
+include 'api-gateway'
+include 'chat-service'
+include 'eureka-server'
+include 'post-service'
+include 'trip-service'
+include 'user-service'
