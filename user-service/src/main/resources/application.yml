@@ -1,12 +1,10 @@
-server:
-  port: 8006
 spring:
   application:
     name: user-service
   datasource:
-    url: jdbc:mysql:/3.25.172.46:3306/mydb
+    url: jdbc:mysql://127.0.0.1:3306/mydb
     username: root
-    password: rootpass
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   sql:
     init:
@@ -14,7 +12,7 @@ spring:
       mode: always
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
@@ -25,18 +23,21 @@ spring:
     show-sql: true
     defer-datasource-initialization: true
     open-in-view: false
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 17282blahbla
+            client-secret: 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
+            scope:
+              - profile
+              - email
 
 jwt:
-  iss: langscool.com
-  secret: KimsionKimhojuKimhohyunParkjuhaYangdonggyu
+  iss: ironman.com
+  secret: KimsionKimhojuKimhodonggyu
   expiration:
     access: 600000
     refresh: 1200000
 
-
-eureka:
-  client:
-    register-with-eureka: true 
-    fetch-registry: true 
-    service-url:
-      defaultZone: http://127.0.0.1:8761/eureka

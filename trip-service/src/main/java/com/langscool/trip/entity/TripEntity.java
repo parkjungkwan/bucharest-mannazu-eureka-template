@@ -1,0 +1,39 @@
+package com.langscool.trip.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
+
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity(name = "TripPlan")
+@Data
+@Builder
+
+public class TripEntity {
+    @Id   
+    private Long id;
+
+    private String userId;
+
+    private String destination;
+
+    private String startDate;
+
+    private String endDate;
+
+    private String status;
+
+    private String wGender;
+
+    private String tStyle;
+
+    private String tGoal;
+}
