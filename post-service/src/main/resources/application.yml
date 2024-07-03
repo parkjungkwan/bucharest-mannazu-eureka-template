@@ -2,7 +2,12 @@ server:
   port: 8004
 spring:
   application:
-    name: post-service
+    name: post
+
+  profiles:
+   active: server
+  config:
+    import: optional:configserver:http://localhost:8888
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/mydb
     username: root

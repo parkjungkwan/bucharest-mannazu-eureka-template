@@ -3,7 +3,12 @@ spring:
     allow-bean-definition-overriding: true
     web-application-type: reactive
   application:
-    name: chat-service
+    name: chat
+
+  profiles:
+   active: server
+  config:
+    import: optional:configserver:http://localhost:8888
   data:
     mongodb:
       uri: mongodb://root:rootpass@127.0.0.1:27017/mgdb?retryWrites=true&w=majority&authSource=admin
@@ -11,6 +16,10 @@ spring:
     init:
       mode: always
       encoding: UTF-8
+
+  
+
+
 logging:
   level:
     org:
